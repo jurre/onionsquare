@@ -140,7 +140,7 @@ body.products-index {
 
 
 
-.progress-bar-indication {  
+.progress-bar-indication {
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
   $base-background-color: white !default;
@@ -177,7 +177,7 @@ body.products-index {
   }
 
   p {
-    color: $progress-color;    
+    color: $progress-color;
     font-weight: 800;
     line-height: $base-line-height;
     margin: 0 !important;
@@ -232,5 +232,12 @@ div.products {
     display: block;
     font-size: 0.7em;
     font-weight: normal;
+  }
+}
+
+
+.products-new {
+  header {
+    background: #161616;
   }
 }

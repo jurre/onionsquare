@@ -2,14 +2,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :items_available %>
+    <%= f.input :title, placeholder: "Product name, e.g. Sweet Onions", label: false %>
+    <%= f.input :description, placeholder: "Write something about your product", label: false %>
+    <%= f.input :items_available, label: "How many items are available?" %>
     <%= f.input :available_until %>
-    <%= f.input :image %>
+    <%= f.input :image, label: "Upload an image to show your product" %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions right">
+    <%= link_to 'Cancel', products_path %> or
     <%= f.button :submit %>
   </div>
 <% end %>
