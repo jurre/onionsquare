@@ -8,9 +8,12 @@
 
 user = User.create(
   email: "jj@farm.com",
+  password: "welkom1234",
   first_name: "Jack",
   last_name: "McDonalds",
+  mobile_number: "+31648532073",
   merchant_id: 0
+
 )
 
 Product.create(
