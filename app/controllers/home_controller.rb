@@ -5,7 +5,8 @@ class HomeController < ApplicationController
     @products = [
       Product.new(
         title: "German Red Pied cow",
-        description: "Organic grass fed beef."
+        description: "Organic grass fed beef.",
+        image_file_name: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Rode_blaarkop_hoogdrachtig.jpg"
       ),
       Product.new(
         title: "Blaarkop",

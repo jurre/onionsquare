@@ -2,7 +2,7 @@
 
   <div class="product">
     <div class="product-image">
-      <% # =product.image %>
+      <!-- <%= image_tag product.image %> -->
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Rode_blaarkop_hoogdrachtig.jpg" alt="">
     </div>
     <div class="product-header">
@@ -11,7 +11,16 @@
     <div class="product-copy">
       <p><%= product.description %></p>
 
+      <div class="progress-bar-indication">
+        <span class="meter" style="width: 60%">
+          <p>70%</p>
+        </span>
+      </div>
+
        <div class="stats">
+
+
+
         <ul>
           <li>70%<span>Pledged</span></li>
           <li>7<span>Pledgers</span></li>
