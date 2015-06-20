@@ -36,7 +36,23 @@
     </div>
 
   </div>
+
+  <div class="farmer product">
+      <h3>  
+        <%= link_to user_path(@product.owner) do %>
+          <%= @product.owner.name %>
+          <%= image_tag @product.owner.gravatar_url, class: "avatar" %>
+        <% end %>
+      </h3>
+      <div class="bio">
+        <%= markdown @product.owner.bio %>
+      </div>
+  </div>
+
+
+
+<!--
   <%= link_to 'Edit', edit_product_path(@product) if @owner %> |
-  <%= link_to 'Back', products_path %>
+  <%= link_to 'Back', products_path %> -->
 </div>
 </section>
