@@ -1,4 +1,7 @@
 <header class="navigation">
+  <%= link_to root_path do %>
+    <span class="logo">ONION SQUARE</span>
+  <% end %>
   <div class="user-menu pull-right">
     <% if signed_in? %>
       <%= link_to edit_user_registration_path do %>
