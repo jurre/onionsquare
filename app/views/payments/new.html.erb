@@ -1,0 +1,17 @@
+<div class="inner">
+  <div class="container">
+    <%= form_tag product_payments_path(@product), method: :post, authenticity_token: true do %>
+      <div id="payment-form"></div>
+      <input type="submit" value="Pay <%= @product.price %>">
+    <% end %>
+
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+    <script>
+      var clientToken = "<%= @client_token %>";
+
+      braintree.setup(clientToken, "dropin", {
+        container: "payment-form"
+      });
+    </script>
+  </div>
+</div>

@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
-      user.name = auth.info.name
+      user.first_name = auth.info.first_name
+      user.last_name = auth.info.first_name
       # user.password = Devise.friendly_token[0,20]
     end
   end
@@ -22,6 +23,14 @@ class User < ActiveRecord::Base
 
   def gravatar_url
     @gravatar_url ||= "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}?s=64&d=mm"
+  end
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+  def merchant?
+    !!merchant_id
   end
 end
 
@@ -44,5 +53,7 @@ end
 #  updated_at             :datetime         not null
 #  provider               :string
 #  uid                    :string
-#  name                   :string
+#  first_name             :string
+#  last_name              :string
+#  merchant_id            :integer
 #
