@@ -2,7 +2,6 @@ class PaymentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_product
 
-
   def new
     result = Braintree::Customer.create(
        :first_name => current_user.first_name,
