@@ -26,15 +26,17 @@ gem "title"
 gem "uglifier"
 gem "unicorn"
 gem "paperclip"
-gem 'therubyracer'
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
+gem "therubyracer"
+gem "devise"
+gem "omniauth"
+gem "omniauth-facebook"
 gem "braintree"
 gem "aws-sdk-v1"
 gem "aws-sdk"
 gem "redcarpet"
 gem 'twilio-ruby'
+gem "react-rails", "~> 1.0"
+gem "pusher"
 
 group :development do
   gem "spring"

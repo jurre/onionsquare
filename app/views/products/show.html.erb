@@ -49,6 +49,14 @@
       </div>
   </div>
 
+<%= react_component("CommentBox", {
+  product: {
+    comments: @product.comments_json,
+    endpoint: product_comments_path(@product),
+    gravatar_url: @product.owner.gravatar_url,
+    pusher_channel: @product.pusher_channel
+  }
+}.to_json) %>
 
 
 <!--
