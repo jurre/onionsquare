@@ -11,7 +11,7 @@ body.products {
   }
 
   .main {
-    min-height: 750px;
+    min-height: 0;
   }
 
   .product-copy {
@@ -19,12 +19,12 @@ body.products {
   }
 
   .description {
-    @include span-columns(7);
+    @include span-columns(8);
   }
 
   .status-block {
     @include span-columns(4);
-    @include omega(); 
+    @include omega();
   }
 
   .product {
@@ -38,7 +38,13 @@ body.products {
 
   .farmer {
     @include span-columns(4);
-    @include shift(7);
+    @include shift(8);
+  }
+
+  .comment-form {
+    display: inline-block;
+    width: 90%;
+    margin: 1em;
   }
 }
 
@@ -192,9 +198,6 @@ div.products {
   }
 }
 
-
-
-
 .stats {
   $base-spacing: 1.5em !default;
   $dark-gray: #333 !default;
@@ -246,4 +249,20 @@ div.products {
   background-color: #efefef;
   padding: 5em;
   width: 100%;
+}
+
+.reviews {
+  @include outer-container;
+  background-color: rgba(0, 0, 0, 0.02);
+  max-width: 100%;
+  padding: 5em;
+  width: 100%;
+}
+
+.comments {
+  @include span-columns(8);
+}
+
+.comment-body {
+  margin: 0 1em;
 }
