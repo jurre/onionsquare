@@ -1,3 +1,10 @@
+<section class="introduction">
+  <p>
+    Awesome!<br>
+    You are almost ready to start offering products.
+    We just need the following info to be able to process payments:
+  </p>
+</section>
 <div class="container">
 
 
@@ -9,11 +16,7 @@
     </ul>
   <% end %>
 
-  <div class="form">  <p>
-  Awesome!<br>
-  You are almost ready to start offering products.<br>
-  We just need the following info to be able to process payments:
-  </p>
+  <div class="form">
     <%= form_tag merchants_path, method: :post, authenticity_token: true do %>
 
       <%= text_field_tag "business_name", nil, placeholder: "Business name", required: :required %>
