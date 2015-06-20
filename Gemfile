@@ -33,6 +33,7 @@ gem 'omniauth-facebook'
 gem "braintree"
 gem "aws-sdk-v1"
 gem "aws-sdk"
+gem "redcarpet"
 
 group :development do
   gem "spring"
