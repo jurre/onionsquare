@@ -1,12 +1,9 @@
-
-
   <div class="product">
     <div class="product-image">
-      <%= image_tag product.image %>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Rode_blaarkop_hoogdrachtig.jpg" alt="">
+      <%= link_to image_tag(product.image), product_path(product) %>
     </div>
     <div class="product-header">
-      <%= product.title %>
+      <%= link_to product.title, product_path(product) %>
     </div>
     <div class="product-copy">
       <p><%= product.description %></p>
@@ -18,9 +15,6 @@
       </div>
 
        <div class="stats">
-
-
-
         <ul>
           <li><%= product.progress %>%<span>Pledged</span></li>
           <li><%= product.orders.count %><span>Pledgers</span></li>
