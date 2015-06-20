@@ -6,12 +6,17 @@ $success-color: #e6efc2 !default;
 
 @mixin flash($color) {
   background-color: $color;
+  bottom: 1em;
   color: darken($color, 60%);
   display: block;
   font-weight: 600;
   margin-bottom: $base-spacing / 2;
   padding: $base-spacing / 2;
+  position: fixed;
+  right: 1em;
   text-align: center;
+  z-index: 999;
+
 
   a {
     color: darken($color, 70%);
