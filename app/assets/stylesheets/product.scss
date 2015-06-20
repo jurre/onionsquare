@@ -24,6 +24,7 @@ body.products {
 
   .status-block {
     @include span-columns(4);
+    @include omega(); 
   }
 
   .product {
@@ -33,6 +34,11 @@ body.products {
   .btn-buy {
     margin: 1em auto;
     width: 100%;
+  }
+
+  .farmer {
+    @include span-columns(4);
+    @include shift(7);
   }
 }
 
@@ -75,7 +81,7 @@ body.products-index {
   border: $product-border;
   box-shadow: 0 2px 4px darken($base-background-color, 10%);
   cursor: pointer;
-  margin: 0 $product-margin $base-spacing $product-margin;
+  margin-bottom: 1.5em;
   position: relative;
 
 
@@ -177,6 +183,12 @@ body.products-index {
     margin: 0 !important;
     padding: .1em .5em;
     text-shadow: 0 0 1px black;
+  }
+}
+
+div.products {
+  .product {
+    margin: 0 1em 1.5em 1em;
   }
 }
 
