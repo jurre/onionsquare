@@ -31,6 +31,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem "braintree"
+gem "aws-sdk-v1"
+gem "aws-sdk"
 
 group :development do
   gem "spring"
