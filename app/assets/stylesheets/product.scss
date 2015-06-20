@@ -1,4 +1,47 @@
 
+body.products {
+  .hero {
+    min-height: 350px;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-image: url(hero-cow.jpg);
+    margin-top: -60px;
+    z-index: -99;
+    padding: 120px;
+  }
+
+  .main {
+    min-height: 750px;
+  }
+
+  .product-copy {
+    @include outer-container;
+  }
+
+  .description {
+    @include span-columns(7);
+  }
+
+  .status-block {
+    @include span-columns(4);
+  }
+
+  .product {
+    padding: 1em;
+  }
+
+  .btn-buy {
+    margin: 1em auto;
+    width: 100%;
+  }
+}
+
+body.products-index {
+  .hero {
+    background-image: url(hero-produce.jpg);
+  }
+}
+
 
 
 .products {
