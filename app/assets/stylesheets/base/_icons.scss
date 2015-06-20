@@ -1,0 +1,24 @@
+@include font-face(icons, 'icons', $asset-pipeline: true);
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-onion:before {
+    content: "\e601";
+}
+
+.icon-merchant:before {
+    content: "\e600";
+    font-size: 22px;
+}
