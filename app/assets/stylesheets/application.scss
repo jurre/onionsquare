@@ -11,7 +11,7 @@
 
 .home {
   .hero {
-    background: image-url("idskoe.jpg") no-repeat 50% 50%;
+    background: image-url("hero-cow.jpg") no-repeat 50% 50%;
     background-size: cover;
     min-height: 500px;
   }
@@ -43,13 +43,17 @@
 
     }
   }
+
+  .hero-copy {
+    text-shadow: 0px 1px 11px rgba(150, 150, 150, 1);
+  }
 }
 
 
 
 .header-featured {
   font-size: modular-scale(3);
-  text-align: center; 
+  text-align: center;
 }
 
 
