@@ -13,6 +13,7 @@
 .home {
   .hero {
     background-size: cover;
+    margin-top: 60px;
     min-height: 500px;
   }
 
@@ -45,6 +46,10 @@
 
   .hero-copy {
     margin-bottom: 2em;
+
+    .tagline {
+      font-size: 1.5em;
+    }
   }
 }
 
