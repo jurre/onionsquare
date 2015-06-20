@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def valid_password?(password)
+      !provider.nil? || super(password)
+  end
+
   def gravatar_url
     @gravatar_url ||= "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}?s=64&d=mm"
   end
