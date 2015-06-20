@@ -4,10 +4,10 @@
   <% end %>
   <div class="user-menu pull-right">
     <% if signed_in? %>
+      <%= current_user.name %>
       <%= link_to edit_user_registration_path do %>
         <%= image_tag current_user.gravatar_url, class: "avatar" %>
       <% end %>
-      <%= current_user.name %>
     <% else %>
       <%= link_to "Sign in with Facebook", user_omniauth_authorize_path("facebook"), class: "btn-auth btn-facebook" %>
     <% end%>
