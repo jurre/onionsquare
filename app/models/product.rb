@@ -7,7 +7,11 @@ class Product < ActiveRecord::Base
   has_many :orders
 
   def progress
-    orders.count / items_available
+    items_available ? orders.count / items_available : 70
+  end
+
+  def days_to_go
+    available_until ? (available_until - Date.today).to_e : 8
   end
 end
 
