@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   def show
+    @owner = @product.owner && (@product.owner.id == current_user.id)
   end
 
   # GET /products/new

@@ -10,11 +10,11 @@
 @import "product";
 
 
-.home {
   .hero {
     background-size: cover;
     margin-top: 60px;
     min-height: 500px;
+    width: 100%;
   }
 
   .hero-inner {
@@ -51,7 +51,6 @@
       font-size: 1.5em;
     }
   }
-}
 
 .mood-video {
   position: fixed;
@@ -77,6 +76,8 @@
 .main {
   background-color: #efefef;
   padding: 1em;
+    width: 100%;
+  min-height: 500px;
 }
 
 .cows {
