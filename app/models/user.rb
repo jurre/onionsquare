@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
   def name
     "#{first_name} #{last_name}"
   end
+
+  def merchant?
+    !!merchant_id
+  end
 end
 
 # == Schema Information
@@ -49,5 +53,7 @@ end
 #  updated_at             :datetime         not null
 #  provider               :string
 #  uid                    :string
-#  name                   :string
+#  first_name             :string
+#  last_name              :string
+#  merchant_id            :integer
 #
