@@ -1,0 +1,11 @@
+<div class="header">
+  <div class="header-inner">
+    <div class="hero-copy">
+      <h1><%= @user.name %></h1>
+    </div>
+  </div>
+</div>
+
+
+<%= image_tag @user.gravatar_url, class: "avatar" %>
+<p><%= markdown @user.bio %></p>

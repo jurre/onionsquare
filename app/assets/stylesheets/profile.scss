@@ -1,0 +1,15 @@
+.header {
+  background-size: cover;
+  background: image-url("hero-cow.jpg") no-repeat 50% 50%;
+  margin-top: 60px;
+  min-height: 500px;
+}
+
+.header-inner {
+  color: #727272;
+  text-align: center;
+
+  h1 {
+    font-size: modular-scale(4);
+  }
+}
