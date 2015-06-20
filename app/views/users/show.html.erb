@@ -1,7 +1,12 @@
 <div class="header">
   <div class="header-inner">
     <div>
-      <h1><%= @user.name %><span class="icon-merchant"></span></h1>
+      <h1>
+        <%= @user.name %>
+        <% if @user.merchant? %>
+          <span class="icon-merchant"></span>
+        <% end %>
+      </h1>
     </div>
     <%= image_tag @user.gravatar_url, class: "avatar" %>
   </div>
