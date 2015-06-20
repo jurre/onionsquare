@@ -1,0 +1,23 @@
+<div class="container">
+  <p>
+  You are almost ready to start offering products. We just need the following info:
+  </p>
+
+  <% if @errors %>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error.message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form_tag merchants_path, method: :post, authenticity_token: true do %>
+
+    <%= text_field_tag "business_name", nil, placeholder: "Business name", required: :required %>
+
+    <%= text_field_tag "tax_id", nil, placeholder: "Tax id", required: :required %>
+
+    <%= submit_tag "Submit" %>
+
+  <% end %>
+</div>

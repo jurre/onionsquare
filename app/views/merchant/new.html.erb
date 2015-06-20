@@ -1,8 +1,0 @@
-<%= form_tag "/onboarding", method: :post, authenticity_token: true do %>
-  <%= text_field_tag "business_name", nil, placeholder: "Business name", required: :required %>
-
-  <%= text_field_tag "tax_id", nil, placeholder: "Tax id", required: :required %>
-
-  <%= submit_tag "Submit" %>
-
-<% end %>
