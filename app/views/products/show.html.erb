@@ -49,15 +49,18 @@
       </div>
   </div>
 
+<% if current_user %>
+
 <%= react_component("CommentBox", {
   product: {
     comments: @product.comments_json,
     endpoint: product_comments_path(@product),
-    gravatar_url: @product.owner.gravatar_url,
+    gravatar_url: current_user.gravatar_url,
     pusher_channel: @product.pusher_channel
   }
 }.to_json) %>
 
+<% end %>
 
 <!--
   <%= link_to 'Edit', edit_product_path(@product) if @owner %> |
