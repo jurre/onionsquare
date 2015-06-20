@@ -22,7 +22,12 @@
         </ul>
       </div>
 
-      <%= link_to 'Edit', edit_product_path(product) %> | <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+
       
+    </div>
+    <div class="product-farmer">   
+      <%= link_to image_tag(product.owner.gravatar_url, class: "avatar"), user_path(product.owner) %>
+          From <%= link_to product.owner.name, user_path(product.owner), class: "name"  %><br>
+      <span class="stars">☆☆☆☆☆</span> <%= product.comments.count %> Reviews
     </div>
   </div>
