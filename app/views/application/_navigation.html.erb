@@ -4,6 +4,7 @@
   <% end %>
   <div class="user-menu pull-right">
     <% if signed_in? %>
+      <%= link_to "Sell your produce", new_product_path, class: "button new-product" %>
       <%= current_user.name %>
       <%= link_to edit_user_registration_path do %>
         <%= image_tag current_user.gravatar_url, class: "avatar" %>

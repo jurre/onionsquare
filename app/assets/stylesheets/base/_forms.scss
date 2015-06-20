@@ -1,3 +1,11 @@
+.form {
+  background: #e5e5e5;
+  margin: 1em auto;
+  padding: 1em;
+  max-width: 28em;
+  width: 28em;
+}
+
 fieldset {
   background-color: lighten($base-border-color, 10%);
   border: $base-border;
@@ -54,6 +62,7 @@ textarea {
 
 textarea {
   resize: vertical;
+  height: calc(10 * 1.7em);
 }
 
 input[type="search"] {
