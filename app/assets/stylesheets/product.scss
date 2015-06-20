@@ -27,9 +27,7 @@ body.products {
     @include omega();
   }
 
-  .product {
-    padding: 1em;
-  }
+
 
   .btn-buy {
     margin: 1em auto;
@@ -45,9 +43,21 @@ body.products {
     display: inline-block;
     width: 90%;
     margin: 1em;
+
+
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      float: right;
+    }
   }
 }
-
+body.products-show {
+  .product {
+    padding: 1em;
+  }
+}
 body.products-index {
   .hero {
     background-image: url(hero-produce.jpg);
@@ -120,6 +130,7 @@ body.products-index {
     font-size: 0.9em;
     line-height: 1.5em;
     padding: ($base-spacing / 2) ($base-spacing / 2);
+    @include clearfix;
 
     p {
       margin: 0 0 ($base-spacing / 2);
@@ -235,6 +246,24 @@ div.products {
     display: block;
     font-size: 0.7em;
     font-weight: normal;
+  }
+}
+
+.product-farmer {
+  padding: $base-spacing / 2;
+  background-color: $color4;
+  @include clearfix;
+  margin-top: 1em;
+
+  .name {
+    font-weight: bold;
+  }
+
+  .avatar {
+    float: left;
+    margin-right: 0.5em;
+    width: 56px;
+    height: 56px;
   }
 }
 
