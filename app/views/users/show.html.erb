@@ -1,11 +1,25 @@
 <div class="header">
   <div class="header-inner">
-    <div class="hero-copy">
-      <h1><%= @user.name %></h1>
+    <div>
+      <h1><%= @user.name %><span class="icon-merchant"></span></h1>
     </div>
+    <%= image_tag @user.gravatar_url, class: "avatar" %>
   </div>
 </div>
 
-
-<%= image_tag @user.gravatar_url, class: "avatar" %>
-<p><%= markdown @user.bio %></p>
+<div class="container">
+  <div class="bio">
+    <h2>About me</h2>
+    <%= markdown @user.bio %>
+  </div>
+  <div class="bio">
+    <h2>Reviews</h2>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <h1 class="center">My products</h1>
+  <% @user.products.each do |product| %>
+    <%= render partial: "home/product", locals: {product: product } %>
+  <% end %>
+</div>

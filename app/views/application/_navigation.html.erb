@@ -4,7 +4,7 @@
   <% end %>
   <div class="user-menu pull-right">
     <% if signed_in? %>
-       <span class="icon-merchant"></span><%= current_user.name %>
+      <%= current_user.name %>
       <%= link_to edit_user_registration_path do %>
         <%= image_tag current_user.gravatar_url, class: "avatar" %>
       <% end %>
