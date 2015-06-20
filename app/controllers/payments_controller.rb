@@ -1,10 +1,10 @@
 class PaymentsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_product
 
   def new
     result = Braintree::Customer.create(
-       :first_name => current_user.first_name,
+      :first_name => current_user.first_name,
       :last_name => current_user.last_name,
       :email => current_user.email,
     )
@@ -25,9 +25,23 @@ class PaymentsController < ApplicationController
       payment_method_nonce: "nonce-from-the-client",
       service_fee_amount: "1.00"
     )
-    Order.create!(product: @product, user: current_user)
+    if result.success?
+      Order.create!(product: @product, user: current_user)
 
-    redirect_to thanks_path
+      if current_user.mobile_number
+        client = Twilio::REST::Client.new ENV["ACCOUNT_SID"], ENV["AUTH_TOKEN"]
+
+        client.account.messages.create({
+          :from => ENV["TWILIO_FROM_NUMBER"],
+          :to => current_user.mobile_number,
+          :body => "There is a new order of your product: #{@product.name}",
+        })
+      end
+
+      redirect_to thanks_path
+    else
+      render :new, notice: "Something went wrong"
+    end
   end
 
   private

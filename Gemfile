@@ -34,6 +34,7 @@ gem "braintree"
 gem "aws-sdk-v1"
 gem "aws-sdk"
 gem "redcarpet"
+gem 'twilio-ruby'
 
 group :development do
   gem "spring"
