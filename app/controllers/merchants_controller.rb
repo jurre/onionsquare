@@ -42,7 +42,7 @@ class MerchantsController < ApplicationController
         :email => current_user.email,
       },
       :tos_accepted => true,
-      :master_merchant_account_id => ENV["BRAINTREE_MAIN_MERCHANT_ID"],
+      :master_merchant_account_id => ENV["BRAINTREE_MAIN_MERCHANT_ID"]
     )
   end
 end
