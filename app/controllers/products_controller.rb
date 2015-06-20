@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
+    redirect_to new_merchant_path unless current_user.merchant?
     @product = Product.new
   end
 
