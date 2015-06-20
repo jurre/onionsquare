@@ -56,4 +56,6 @@ end
 #  first_name             :string
 #  last_name              :string
 #  merchant_id            :integer
+#  bio                    :text
+#  mobile_number          :string
 #
