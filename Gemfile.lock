@@ -51,6 +51,8 @@ GEM
     bourbon (4.2.3)
       sass (~> 3.4)
       thor
+    braintree (2.45.0)
+      builder (>= 2.0.0)
     builder (3.2.2)
     bundler-audit (0.3.1)
       bundler (~> 1.2)
@@ -318,6 +320,7 @@ DEPENDENCIES
   autoprefixer-rails
   awesome_print
   bourbon (~> 4.2.0)
+  braintree
   bundler-audit
   byebug
   capybara-webkit (>= 1.2.0)
@@ -361,3 +364,6 @@ DEPENDENCIES
   unicorn
   web-console
   webmock
+
+BUNDLED WITH
+   1.10.3

@@ -30,6 +30,7 @@ gem 'therubyracer'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem "braintree"
 
 group :development do
   gem "spring"
