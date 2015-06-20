@@ -26,42 +26,13 @@
 
 
 
-<h2 class="header-featured">Featured cows</h2>
+<h2 class="header-featured">Featured products</h2>
 
-<div class="cows">
-  <div class="cow">
-    <div class="cow-image">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Rode_blaarkop_hoogdrachtig.jpg" alt="">
-    </div>
-    <div class="cow-header">
-      German Red Pied cow
-    </div>
-    <div class="cow-copy">
-      <p>Organic grass fed beef.</p>
-    </div>
-  </div>
+<div class="products">
 
-  <div class="cow">
-    <div class="cow-image">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Blonde_Aquitaine.jpg" alt="">
-    </div>
-    <div class="cow-header">
-      Blaarkop
-    </div>
-    <div class="cow-copy">
-      <p>Dutch beef by the kilo</p>
-    </div>
-  </div>
+<% @products.each do |product| %>
+   <%= render partial: "home/product", locals: {product: product } %>
+<% end %>
 
-  <div class="cow">
-    <div class="cow-image">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Gelbvieh.jpg/1599px-Gelbvieh.jpg" alt="">
-    </div>
-    <div class="cow-header">
-      The Last cow
-    </div>
-    <div class="cow-copy">
-      <p>&heart;</p>
-    </div>
-  </div>
+
 </div>
