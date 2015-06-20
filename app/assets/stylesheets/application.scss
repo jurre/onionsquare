@@ -6,3 +6,23 @@
 @import "neat";
 @import "base/base";
 @import "refills/flashes";
+
+
+
+.home {
+  .hero {
+    background: image-url("idskoe.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    min-height: 500px;
+  }
+
+  .hero-inner {
+
+    color: #fff;
+    text-align: center;
+
+    h1 {
+      font-size: modular-scale(4);
+    }
+  }
+}
