@@ -6,7 +6,7 @@
 @import "neat";
 @import "base/base";
 @import "refills/flashes";
-
+@import "navigation";
 
 
 .home {
@@ -139,4 +139,8 @@
       background-color: $cow-background;
     }
   }
+}
+
+.pull-right {
+  float: right;
 }
