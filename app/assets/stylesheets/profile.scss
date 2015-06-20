@@ -1,8 +1,8 @@
 .header {
   background-size: cover;
-  background: image-url("hero-cow.jpg") no-repeat 50% 50%;
-  margin-top: 60px;
-  min-height: 500px;
+  background: image-url("hero-cow.jpg") no-repeat 50% 40%;
+  margin-bottom: 3em;
+  min-height: 300px;
 }
 
 .header-inner {
@@ -11,5 +11,38 @@
 
   h1 {
     font-size: modular-scale(4);
+  }
+
+  .icon-merchant:before {
+    font-size: 1.3em;
+  }
+
+  .avatar {
+    box-shadow: none;
+    height: 100px;
+    margin-bottom: -336px;
+    width: 100px;
+  }
+}
+
+.container {
+  @include outer-container;
+  h1,h2 {
+    font-family: "Roboto Slab", serif;
+  }
+}
+
+.bio {
+  @include span-columns(12);
+  padding: 1em;
+
+  @include media($medium-screen-up) {
+    @include span-columns(2);
+  }
+
+  ul {
+    list-style-type: disc;
+    margin: 0 0 1em 1em;
+
   }
 }
