@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
   end
 
   def days_to_go
-    available_until ? (available_until - Date.today).to_e : 8
+    available_until ? (available_until - Date.today).to_i : 8
   end
 end
 
@@ -28,4 +28,8 @@ end
 #  image_updated_at   :datetime
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  price              :decimal(, )
+#  items_available    :integer
+#  available_until    :date
+#  user_id            :integer
 #
