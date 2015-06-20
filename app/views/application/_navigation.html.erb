@@ -1,10 +1,11 @@
 <header class="navigation">
-  <div class="pull-right">
+  <div class="user-menu pull-right">
     <% if signed_in? %>
-      <span>Signed in as <%= current_user.name %></span>
-      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      <%= link_to edit_user_registration_path do %>
+        <%= image_tag current_user.gravatar_url, class: "avatar" %>
+      <% end %>
+      <%= current_user.name %>
     <% else %>
-      <span><%= link_to "Sign up", new_user_session_path %></span>
       <%= link_to "Sign in with Facebook", user_omniauth_authorize_path("facebook"), class: "btn-auth btn-facebook" %>
     <% end%>
   </div>

@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
       # user.password = Devise.friendly_token[0,20]
     end
   end
+
+  def gravatar_url
+    @gravatar_url ||= "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}?s=64&d=mm"
+  end
 end
 
 # == Schema Information
