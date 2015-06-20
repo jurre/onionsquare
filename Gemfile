@@ -26,6 +26,10 @@ gem "title"
 gem "uglifier"
 gem "unicorn"
 gem "paperclip"
+gem 'therubyracer'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development do
   gem "spring"
