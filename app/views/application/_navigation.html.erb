@@ -1,7 +1,7 @@
 <header class="navigation">
   <div class="pull-right">
     <% if signed_in? %>
-      <span>Signed in as <%= current_user.email %></span>
+      <span>Signed in as <%= current_user.name %></span>
     <% else %>
       <span><%= link_to "Sign up", new_user_session_path %></span>
     <% end%>
