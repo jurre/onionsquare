@@ -1,22 +1,23 @@
-class MerchantController < ApplicationController
+class MerchantsController < ApplicationController
   def new
 
   end
 
   def create
-    create_merchant
-    if result.succes?
+    result = create_merchant
+    if result.success?
       current_user.update(merchant_id: result.merchant_account.id)
       redirect_to new_product_path
     else
-      render :new, notice: "something went wrong"
+      @errors = result.errors
+      render :new, notice: "Something went wrong"
     end
   end
 
   private
 
   def create_merchant
-    result = Braintree::MerchantAccount.create(
+    Braintree::MerchantAccount.create(
       :individual => {
         :first_name => current_user.first_name,
         :last_name => current_user.last_name,
