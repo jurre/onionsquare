@@ -32,17 +32,20 @@
   }
 }
 
-.bio {
-  @include span-columns(12);
-  padding: 1em;
+body.users {
 
-  @include media($medium-screen-up) {
-    @include span-columns(2);
-  }
+  .bio {
+    @include span-columns(12);
+    padding: 1em;
 
-  ul {
-    list-style-type: disc;
-    margin: 0 0 1em 1em;
+    @include media($medium-screen-up) {
+      @include span-columns(2);
+    }
 
+    ul {
+      list-style-type: disc;
+      margin: 0 0 1em 1em;
+
+    }
   }
 }

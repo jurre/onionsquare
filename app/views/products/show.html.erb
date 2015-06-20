@@ -1,5 +1,5 @@
-<div class="hero">
-  <%= image_tag(@product.image, class: "mood-video") %>
+
+<div class="hero" style="background-image: url(<%= image_url(@product.image) %>);">
   <div class="hero-inner">
     <div class="hero-copy">
       <h1><%= @product.title %></h1>
@@ -12,24 +12,47 @@
 
 
 <div class="product-copy">
-  <p><%= @product.description %></p>
+  <div class="description">
+    <p><%= @product.description %></p>
+  </div>
+  
 
-  <div class="progress-bar-indication">
-    <span class="meter" style="width: <%= @product.progress %>%">
-      <p><%= @product.progress %>%</p>
-    </span>
+  <div class="status-block product">
+
+    <div class="progress-bar-indication">
+      <span class="meter" style="width: <%= @product.progress %>%">
+        <p><%= @product.progress %>%</p>
+      </span>
+    </div>
+
+     <div class="stats">
+      <ul>
+        <li><%= @product.progress %>%<span>Pledged</span></li>
+        <li><%= @product.orders.count %><span>Pledgers</span></li>
+        <li><%= @product.days_to_go %> <span>Days to go</span></li>
+      </ul>
+
+      <%= button_to "Buy now!", new_product_payment_path(@product), method: :get, class: "btn-buy" %>
+    </div>
+
   </div>
 
-   <div class="stats">
-    <ul>
-      <li><%= @product.progress %>%<span>Pledged</span></li>
-      <li><%= @product.orders.count %><span>Pledgers</span></li>
-      <li><%= @product.days_to_go %> <span>Days to go</span></li>
-    </ul>
+  <div class="farmer product">
+      <h3>  
+        <%= link_to user_path(@product.owner) do %>
+          <%= @product.owner.name %>
+          <%= image_tag @product.owner.gravatar_url, class: "avatar" %>
+        <% end %>
+      </h3>
+      <div class="bio">
+        <%= markdown @product.owner.bio %>
+      </div>
   </div>
+
+
+
+<!--
+  <%= link_to 'Edit', edit_product_path(@product) if @owner %> |
+  <%= link_to 'Back', products_path %> -->
 </div>
-
-<%= link_to 'Edit', edit_product_path(@product) if @owner %> |
-<%= link_to 'Back', products_path %>
-
 </section>
