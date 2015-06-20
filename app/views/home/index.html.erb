@@ -25,11 +25,11 @@
 <section class="main">
 <h2 class="header-featured">Featured products</h2>
   <div class="products">
-
   <% @products.each do |product| %>
-     <%= render partial: "home/product", locals: {product: product } %>
+    <%= render partial: "home/product", locals: {product: product } %>
   <% end %>
-
-
+  </div>
+  <div class="center">
+    <%= link_to "More products", products_path, class: "button new-product" %>
   </div>
 </section>
