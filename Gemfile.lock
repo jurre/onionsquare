@@ -90,6 +90,7 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
+    connection_pool (2.2.0)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     database_cleaner (1.4.1)
@@ -137,6 +138,7 @@ GEM
     hashie (3.4.2)
     high_voltage (2.3.0)
     highline (1.7.2)
+    httpclient (2.6.0.1)
     i18n (0.7.0)
     i18n-tasks (0.8.3)
       activesupport
@@ -203,6 +205,10 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    pusher (0.14.5)
+      httpclient (~> 2.5)
+      multi_json (~> 1.0)
+      signature (~> 0.1.8)
     rack (1.6.4)
     rack-canonical-host (0.1.0)
       addressable
@@ -236,6 +242,13 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.4.2)
+    react-rails (1.0.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      rails (>= 3.1)
+      react-source (~> 0.13)
+    react-source (0.13.3)
     recipient_interceptor (0.1.2)
       mail
     redcarpet (3.3.1)
@@ -269,6 +282,7 @@ GEM
       tilt (~> 1.1)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
+    signature (0.1.8)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -363,9 +377,11 @@ DEPENDENCIES
   paperclip
   pg
   pry-rails
+  pusher
   rack-canonical-host
   rack-timeout
   rails (= 4.2.1)
+  react-rails (~> 1.0)
   recipient_interceptor
   redcarpet
   refills

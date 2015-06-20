@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   belongs_to :owner, class_name: "User", foreign_key: :user_id
   has_many :orders
+  has_many :comments
 
   def progress
     items_available ? orders.count / items_available : 70
@@ -12,6 +13,23 @@ class Product < ActiveRecord::Base
 
   def days_to_go
     available_until ? (available_until - Date.today).to_i : 8
+  end
+
+  def comments_json
+    comments.order("created_at DESC").map do |comment|
+      {
+        id: comment.id,
+        body: comment.body,
+        user: {
+          gravatar_url: comment.user.gravatar_url,
+          name: "#{owner.first_name} #{owner.last_name}",
+        },
+      }
+    end
+  end
+
+  def pusher_channel
+    "product-#{id}"
   end
 end
 
