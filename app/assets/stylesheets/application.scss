@@ -24,5 +24,119 @@
     h1 {
       font-size: modular-scale(4);
     }
+
+    .local-form {
+      @include span-columns(6);
+      @include shift(3);
+      padding: 2em;
+      background: rgba(0,0,0,0.6);
+      text-align: left;
+
+      .zip {
+        label,
+        input {
+          display: block;
+          width: 50%;
+          float: left;
+        }
+      }
+
+    }
+  }
+}
+
+
+
+.header-featured {
+  font-size: modular-scale(3);
+  text-align: center; 
+}
+
+
+.cows {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+}
+
+.cow {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $base-link-color: $action-color !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $cow-border-color: $base-border-color;
+  $cow-border: 1px solid $cow-border-color;
+  $cow-background: lighten($cow-border-color, 10%);
+  $cow-header-background: $cow-background;
+  $cow-margin: 1em;
+  $cow-image-hover-opacity: 0.7;
+  $cow-image-hover-color: #F8F2B4;
+
+  @include flex-basis(15em);
+  @include flex-grow(1);
+  @include transition (all 0.2s ease-in-out);
+  background-color: $cow-background;
+  border-radius: $base-border-radius;
+  border: $cow-border;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  cursor: pointer;
+  margin: 0 $cow-margin $base-spacing $cow-margin;
+  position: relative;
+
+
+  .cow-image {
+    overflow: hidden;
+    // height: 150px;
+    max-height: 300px;
+    background-color: $cow-image-hover-color;
+
+    img {
+      @include transition (all 0.2s ease-in-out);
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  .cow-header {
+    @include transition (all 0.2s ease-in-out);
+    background-color: $cow-header-background;
+    border-bottom: $cow-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+  }
+
+  .cow-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+  }
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+
+    img {
+      opacity: $cow-image-hover-opacity;
+    }
+  }
+
+  &:active {
+    background-color: $cow-background;
+
+    .cow-header {
+      background-color: $cow-background;
+    }
   }
 }
