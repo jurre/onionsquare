@@ -12,8 +12,8 @@
       <p><%= product.description %></p>
 
       <div class="progress-bar-indication">
-        <span class="meter" style="width: 60%">
-          <p>70%</p>
+        <span class="meter" style="width: <%= product.progress %>%">
+          <p><%= product.progress %>%</p>
         </span>
       </div>
 
@@ -22,9 +22,9 @@
 
 
         <ul>
-          <li>70%<span>Pledged</span></li>
-          <li>7<span>Pledgers</span></li>
-          <li>8<span>Days to go</span></li>
+          <li><%= product.progress %>%<span>Pledged</span></li>
+          <li><%= product.orders.count %><span>Pledgers</span></li>
+          <li><%= product.days_to_go %> <span>Days to go</span></li>
         </ul>
       </div>
     </div>
