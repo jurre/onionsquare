@@ -44,10 +44,10 @@ var CommentBox = React.createClass({
   render: function () {
     return (
       <div className='comment-box'>
-        <img src={ this.state.gravatar_url } />
-        <form onSubmit={ this._postComment }>
-          <input ref='body' type='text' placeholder='New comment' />
-          <input type='submit' value='Post' />
+        <img className='avatar' src={ this.state.gravatar_url } />
+        <form className='comment-form' onSubmit={ this._postComment }>
+          <input ref='body' type='text' placeholder='Write a review' />
+          <input className='pull-right' type='submit' value='Post' />
         </form>
         { this._renderComments() }
       </div>

@@ -8,62 +8,59 @@
 </div>
 
 <section class="main">
-
-
-
-<div class="product-copy">
-  <div class="description">
-    <p><%= @product.description %></p>
-  </div>
-  
-
-  <div class="status-block product">
-
-    <div class="progress-bar-indication">
-      <span class="meter" style="width: <%= @product.progress %>%">
-        <p><%= @product.progress %>%</p>
-      </span>
+  <div class="product-copy">
+    <div class="description">
+      <p><%= @product.description %></p>
     </div>
 
-     <div class="stats">
-      <ul>
-        <li><%= @product.progress %>%<span>Pledged</span></li>
-        <li><%= @product.orders.count %><span>Pledgers</span></li>
-        <li><%= @product.days_to_go %> <span>Days to go</span></li>
-      </ul>
 
-      <%= button_to "Buy now!", new_product_payment_path(@product), method: :get, class: "btn-buy" %>
-    </div>
+    <div class="status-block product">
 
-  </div>
-
-  <div class="farmer product">
-      <h3>  
-        <%= link_to user_path(@product.owner) do %>
-          <%= @product.owner.name %>
-          <%= image_tag @product.owner.gravatar_url, class: "avatar" %>
-        <% end %>
-      </h3>
-      <div class="bio">
-        <%= markdown @product.owner.bio %>
+      <div class="progress-bar-indication">
+        <span class="meter" style="width: <%= @product.progress %>%">
+          <p><%= @product.progress %>%</p>
+        </span>
       </div>
+
+       <div class="stats">
+        <ul>
+          <li><%= @product.progress %>%<span>Pledged</span></li>
+          <li><%= @product.orders.count %><span>Pledgers</span></li>
+          <li><%= @product.days_to_go %> <span>Days to go</span></li>
+        </ul>
+
+        <%= button_to "Buy now!", new_product_payment_path(@product), method: :get, class: "btn-buy" %>
+      </div>
+
+    </div>
+
+    <div class="farmer product">
+        <h3>
+          <%= link_to user_path(@product.owner) do %>
+            <%= @product.owner.name %>
+            <%= image_tag @product.owner.gravatar_url, class: "avatar" %>
+          <% end %>
+        </h3>
+        <div class="bio">
+          <%= markdown @product.owner.bio %>
+        </div>
+    </div>
   </div>
+</section>
 
 <% if current_user %>
-
-<%= react_component("CommentBox", {
-  product: {
-    comments: @product.comments_json,
-    endpoint: product_comments_path(@product),
-    gravatar_url: current_user.gravatar_url,
-    pusher_channel: @product.pusher_channel
-  }
-}.to_json) %>
-
+  <section class="reviews">
+    <div class="comments">
+      <%= react_component("CommentBox", {
+        product: {
+          comments: @product.comments_json,
+          endpoint: product_comments_path(@product),
+          gravatar_url: current_user.gravatar_url,
+          pusher_channel: @product.pusher_channel
+        }
+      }.to_json) %>
+    </div>
+  </section>
 <% end %>
 
-<!--
-  <%= link_to 'Edit', edit_product_path(@product) if @owner %> |
-  <%= link_to 'Back', products_path %> -->
-</div>
-</section>
+
