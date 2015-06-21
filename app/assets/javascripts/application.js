@@ -18,10 +18,10 @@
 //= require_tree .
 
 (function ($) {
-  navigator.geolocation.getCurrentPosition(function (position) {
-    if($("#js-lat-field").length) {
+  if($("#js-lat-field").length) {
+    navigator.geolocation.getCurrentPosition(function (position) {
       $("#js-lat-field")[0].value = position.coords.latitude;
       $("#js-long-field")[0].value = position.coords.longitude;
-    }
-  });
+    });
+  }
 }(window.jQuery));
