@@ -22,6 +22,10 @@
     color: #fff;
     text-align: center;
 
+    input {
+      color: $base-font-color;
+    }
+
     h1 {
       font-size: modular-scale(4);
     }
