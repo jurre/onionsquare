@@ -10,16 +10,17 @@
       <% end %>
     </div>
     <div class="product-copy">
-      <p><%= markdown truncate(product.description, length: 140) %></p>
+      <div class="product-description">
+        <p><%= markdown truncate(product.description, length: 140) %></p>
+      </div>
 
       <div class="progress-bar-indication">
         <span class="meter" style="width: <%= product.progress %>%">
-          <p><%= product.progress %>%</p>
         </span>
       </div>
 
 
-      
+
        <div class="stats">
         <ul>
           <li><%= product.progress %>%<span>Pledged</span></li>
@@ -29,9 +30,9 @@
       </div>
 
 
-      
+
     </div>
-    <div class="product-farmer">   
+    <div class="product-farmer">
       <%= link_to image_tag(product.owner.gravatar_url, class: "avatar"), user_path(product.owner) %>
           From <%= link_to product.owner.name, user_path(product.owner), class: "name"  %><br>
       <span class="stars">☆☆☆☆☆</span> <%= product.comments.count %> Reviews
