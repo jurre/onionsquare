@@ -1,8 +1,20 @@
-<div class="inner">
-  <div class="container">
+<div class="hero" style="background-image: url(<%= image_url(@product.image) %>);">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1><%= @product.title %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="form payment-form">
+    <p><%= markdown @product.description.truncate(140) %></p>
+    <h3 class="pull-right"><%= number_to_currency(@product.price, unit: "€", precision: 0) %></h3>
     <%= form_tag product_payments_path(@product), method: :post, authenticity_token: true do %>
       <div id="payment-form"></div>
-      <input type="submit" value="Pay <%= @product.price %>">
+      <div class="form-actions right">
+        <input type="submit" value="Pay <%= @product.price %>">
+      </div>
     <% end %>
 
     <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
