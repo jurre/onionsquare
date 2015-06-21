@@ -4,6 +4,10 @@
     </div>
     <div class="product-header">
       <%= link_to product.title, product_path(product) %>
+
+      <% if product.price %>
+      <span class="pull-right"><%= number_to_currency(product.price, precision: 0, unit: "€") %></span>
+      <% end %>
     </div>
     <div class="product-copy">
       <p><%= markdown truncate(product.description, length: 140) %></p>
@@ -14,6 +18,8 @@
         </span>
       </div>
 
+
+      
        <div class="stats">
         <ul>
           <li><%= product.progress %>%<span>Pledged</span></li>
