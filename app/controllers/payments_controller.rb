@@ -30,7 +30,7 @@ class PaymentsController < ApplicationController
     if result.success?
       Order.create!(product: @product, user: current_user)
 
-      if current_user.mobile_number
+      if @product.owner.mobile_number
         client = Twilio::REST::Client.new ENV["ACCOUNT_SID"], ENV["AUTH_TOKEN"]
 
         client.account.messages.create({
