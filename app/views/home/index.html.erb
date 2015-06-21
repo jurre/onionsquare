@@ -13,8 +13,8 @@
         <div class="zip">
           <%= form_tag('/map', method: :get) do %>
           <label>Search nearby:</label>
-          <input type="hidden" name="lat" value="<%= @location.latitude %>" id="js-lat-field" />
-          <input type="hidden" name="long" value="<%= @location.latitude %>" id="js-long-field" />
+          <input type="hidden" name="lat" value="" id="js-lat-field" />
+          <input type="hidden" name="long" value="" id="js-long-field" />
           <input type="text" name="search" placeholder="Like: Organic Sweet Potatoes">
           <% end %>
         </div>
