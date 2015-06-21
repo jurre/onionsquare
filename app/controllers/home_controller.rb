@@ -6,6 +6,6 @@ class HomeController < ApplicationController
   end
 
   def map
-    @products = Product.order(:id).take(3)
+    @products = Product.where.not(latitude: nil)
   end
 end
