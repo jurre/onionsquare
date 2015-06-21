@@ -14,11 +14,12 @@ class PaymentsController < ApplicationController
         customer_id: result.customer.id
       )
     else
-      render :new, notice: "something when wrong"
+      render :new, notice: "Something when wrong"
     end
   end
 
   def create
+    Order.create!(product: @product, user: current_user)
     result = Braintree::Transaction.sale(
       merchant_account_id: @product.owner.merchant_id.to_s,
       amount: @product.price,
