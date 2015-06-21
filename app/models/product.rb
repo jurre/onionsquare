@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   has_many :comments
 
   def progress
-    items_available ? orders.count.to_f / items_available * 100 : 70
+    items_available ? (orders.count.to_f / items_available * 100).to_i : 70
   end
 
   def days_to_go
