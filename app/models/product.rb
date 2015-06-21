@@ -9,6 +9,14 @@ class Product < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
 
+  def self.text_search(query)
+    if query.present?
+      where("title ilike :q or description ilike :q", q: "%#{query}%")
+    else
+      scoped
+    end
+  end
+
   def progress
     items_available ? (orders.count.to_f / items_available * 100).to_i : 70
   end

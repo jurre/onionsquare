@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   end
 
   def map
-    @products = Product.where.not(latitude: nil)
+    location = [params[:lat], params[:long]]
+    @products = Product.near(location, 150, units: :km).text_search(params[:search])
   end
 end
