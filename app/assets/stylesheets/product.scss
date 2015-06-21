@@ -274,6 +274,13 @@ div.products {
   }
 }
 
+.product-description {
+  min-height: 50px;
+  margin-bottom: 1em;
+  max-height: 50px;
+  overflow: hidden;
+}
+
 
 .products-new {
   header {
