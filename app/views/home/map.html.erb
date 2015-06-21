@@ -5,7 +5,11 @@
       function initialize() {
         var mapOptions = {
           center: { lat: <%= params[:lat] %>, lng: <%= params[:long] %> },
-          zoom: 8
+          zoom: 8,
+          scrollwheel: false,
+          navigationControl: false,
+          mapTypeControl: false,
+          scaleControl: false,
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
