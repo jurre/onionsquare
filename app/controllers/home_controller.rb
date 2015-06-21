@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
   def index
-    @products = Product.take(3)
+    @products = Product.order(:id).take(3)
   end
 end

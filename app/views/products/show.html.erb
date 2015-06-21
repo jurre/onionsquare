@@ -15,7 +15,9 @@
 
 
     <div class="status-block product">
-
+      <% if @product.price %>
+      <span class="price"><%= number_to_currency(@product.price, precision: 0, unit: "€") %></span>
+      <% end %>
       <div class="progress-bar-indication">
         <span class="meter" style="width: <%= @product.progress %>%">
           <p><%= @product.progress %>%</p>
