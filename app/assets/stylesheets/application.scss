@@ -189,3 +189,18 @@
 .right {
   text-align: right;
 }
+
+#map-canvas {
+  height: 500px;
+  width: 100%;
+}
+
+body.home-map {
+  .navigation {
+    position: absolute;
+    top: 0;
+    z-index: 60;
+  }
+  .main {
+  }
+}
