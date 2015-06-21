@@ -16,3 +16,9 @@
 //= require react_ujs
 //= require components
 //= require_tree .
+
+(function ($) {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    console.log(position);
+  });
+}(window.jQuery));
