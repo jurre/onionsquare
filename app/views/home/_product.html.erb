@@ -6,7 +6,7 @@
       <%= link_to product.title, product_path(product) %>
     </div>
     <div class="product-copy">
-      <p><%= product.description %></p>
+      <p><%= markdown truncate(product.description, length: 140) %></p>
 
       <div class="progress-bar-indication">
         <span class="meter" style="width: <%= product.progress %>%">
