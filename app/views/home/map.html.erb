@@ -1,0 +1,52 @@
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBam-HQpRPF4XfpxBu2cYo_BXPrVSb9esY">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: { lat: <%= params[:lat] %>, lng: <%= params[:long] %> },
+          zoom: 8,
+          scrollwheel: false,
+          navigationControl: false,
+          mapTypeControl: false,
+          scaleControl: false,
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+
+
+        <% @products.each do | product | %>
+
+
+        var farmLat<%=product.id%> = new google.maps.LatLng(<%=product.latitude%>,<%=product.longitude%>);
+        var marker<%=product.id%> = new google.maps.Marker({
+            position: farmLat<%=product.id%>,
+            map: map,
+            title: '<%= j product.title %>'
+        });
+        google.maps.event.addListener(marker<%=product.id%>, 'click', function() {
+            window.location.href = '<%= product_path(product) %>';
+        });
+        <% end %>
+      }
+
+      
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<div id="map-canvas"></div>
+
+
+<section class="main">
+
+<h2 class="header-featured">Products in the area</h2>
+  <div class="products">
+  <% @products.each do |product| %>
+    <%= render partial: "home/product", locals: {product: product } %>
+  <% end %>
+  </div>
+  <div class="center">
+    <%= link_to "More products", products_path, class: "button new-product" %>
+  </div>
+</section>

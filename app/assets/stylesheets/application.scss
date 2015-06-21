@@ -22,6 +22,10 @@
     color: #fff;
     text-align: center;
 
+    input {
+      color: $base-font-color;
+    }
+
     h1 {
       font-size: modular-scale(4);
     }
@@ -188,4 +192,19 @@
 
 .right {
   text-align: right;
+}
+
+#map-canvas {
+  height: 500px;
+  width: 100%;
+}
+
+body.home-map {
+  .navigation {
+    position: absolute;
+    top: 0;
+    z-index: 60;
+  }
+  .main {
+  }
 }

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: "home#index"
 
+  get :map, to: "home#map" 
+
   devise_for :users, controllers: { omniauth_callbacks: "callbacks" }
 
   resources :products do

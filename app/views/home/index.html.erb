@@ -9,12 +9,14 @@
 
     <div class="local-form">
       <div class="inner">
-        <h2>Farmers nearby</h2>
 
-        <button class="location-button">Use my location</button>
         <div class="zip">
-          <label>Enter zip:</label>
-          <input type="text" name="zip" placeholder="Like 0178 Berlin">
+          <%= form_tag('/map', method: :get) do %>
+          <label>Search nearby <%= @location.city %>:</label>
+          <input type="hidden" name="lat" value="<%= @location.latitude %>" id="js-lat-field" />
+          <input type="hidden" name="long" value="<%= @location.latitude %>" id="js-long-field" />
+          <input type="text" name="search" placeholder="Like: Organic Sweet Potatoes">
+          <% end %>
         </div>
       </div>
     </div>

@@ -37,6 +37,7 @@ gem "redcarpet"
 gem 'twilio-ruby'
 gem "react-rails", "~> 1.0"
 gem "pusher"
+gem "geocoder"
 
 group :development do
   gem "spring"
