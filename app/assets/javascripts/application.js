@@ -19,6 +19,9 @@
 
 (function ($) {
   navigator.geolocation.getCurrentPosition(function (position) {
-    console.log(position);
+    if($("#js-lat-field").length) {
+      $("#js-lat-field")[0].value = position.coords.latitude;
+      $("#js-long-field")[0].value = position.coords.longitude;
+    }
   });
 }(window.jQuery));
